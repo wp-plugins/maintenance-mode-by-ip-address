@@ -4,7 +4,7 @@ Donate Link: <https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_
 Tags: maintenance, ip, MailChimp, subscribe, API, utilities, social
 Requires at least: 4.1
 Tested up to: 4.2.2
-Stable tag: 0.9
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,10 @@ persist, please email us at <wplugins@rcit.consulting>.
 
 == Changelog ==
 
+= 1.1 =
+
+* Bug Fix: User was not able to choose a custom page.
+
 = 1.0 =
 
 * Initial launch of the plugin
@@ -85,5 +89,5 @@ persist, please email us at <wplugins@rcit.consulting>.
 
 == Upgrade Notice ==
 
-= 1.0 =
-This is the first version of the plugin.  No updates available yet.
+= 1.1 =
+This update should fix the problem where user was not able to choose a custom page.

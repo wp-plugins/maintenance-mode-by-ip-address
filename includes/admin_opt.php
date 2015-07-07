@@ -87,7 +87,7 @@
 												<?
 													foreach($pages as $page){
 														?>
-															<option value="<? echo $page->post_name ; ?>" <? selected( $rc_mmip_topage, $page->post_name ); ?>> <? if( $page->post_name == $rc_mmip_topage): echo $page->post_title . ' (Default Template)'; else:  echo $page->post_title; endif; ?></option>
+															<option value="<? echo $page->post_name ; ?>" <? selected( $rc_mmip_topage, $page->post_name ); ?>> <? echo $page->post_title; ?></option>
 														<?	
 													}
 												?>

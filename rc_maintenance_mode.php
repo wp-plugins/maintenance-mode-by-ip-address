@@ -4,7 +4,7 @@
 *	 Plugin Name: Maintenance Mode by IP Address
 *	 Plugin URI: http://rcit.consulting/
 *	 Description: Maintenance Mode by IP Address allows you to exclude your site from visitors other than you, by using your IP address, while doing maintenance on your site.
-*	 Version: 1.0
+*	 Version: 1.1
 *	 Author: RC IT Consulting Firm LLC
 *	 Author URI: http://rcit.consulting/
 */
@@ -262,22 +262,15 @@ function rc_mmip_process_form(){
 				$rc_mmip_allowedip = array($_SERVER['REMOTE_ADDR']);
 			}
 			
-			if(isset($_POST['rc_mmip_whereto'])){
+			if(isset($_POST['rc_mmip_whereto']) && $_POST['rc_mmip_whereto'] == 1){
 				
-				$_POST['rc_mmip_whereto'] = (int) $_POST['rc_mmip_whereto'];
-				
-				//Check if user selected a page or url
-				if($_POST['rc_mmip_whereto'] == 1){
-					$rc_mmip_url = $_POST['rc_mmip_url'];
-					$rc_mmip_whereto = 1;
-				}else{
-					$rc_mmip_whereto = 0;
-					$rc_mmip_url = '';
-				}
+				$rc_mmip_url = $_POST['rc_mmip_url'];
+				$rc_mmip_whereto = 1;
 				
 			}else{
 				$rc_mmip_whereto = 0;
 				$rc_mmip_url = '';
+				$rc_mmip_page_slug = sanitize_text_field($_POST['rc_mmip_topage']);
 			}
 			
 			if(isset($_POST['rc_mmip_mchimp_opt'])){
@@ -663,12 +656,12 @@ add_action('admin_enqueue_scripts','rc_maint_mode_styles');
 
 function template_chooser($template){
 	
-    global $wp_query;
-	global $rc_maint_custom_ptitle;
+   // global $wp_query;
+	//global $rc_maint_custom_ptitle;
 	
     $plugindir = dirname(__FILE__);
 	
-	if(is_page($rc_maint_custom_ptitle)){
+	if(is_page('maintenance_mode-ip')){
 		return $plugindir . '/templates/single-rc_mmip.php';
 	}
 	
