@@ -3,7 +3,7 @@ Contributors: rcitconsultign
 Donate Link: <https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=AUMPPD6ALDPRQ>
 Tags: maintenance, ip, MailChimp, subscribe, API, utilities, social
 Requires at least: 4.1
-Tested up to: 4.2.2
+Tested up to: 4.2.3
 Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
